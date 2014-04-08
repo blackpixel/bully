@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		21396B9D177299360040FCA2 /* libSocketRocketOSXLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 21396B9C177299330040FCA2 /* libSocketRocketOSXLibrary.a */; };
 		21396B9E177299470040FCA2 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = B256430C160285C500586711 /* Reachability.m */; };
 		B2215B7B15DC19FB00DD59C1 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2215B7A15DC19FB00DD59C1 /* Security.framework */; };
 		B2215B7D15DC19FF00DD59C1 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2215B7C15DC19FF00DD59C1 /* Cocoa.framework */; };
@@ -20,39 +19,32 @@
 		B2587F751579E8B4009D7B44 /* BLYChannel.h in Headers */ = {isa = PBXBuildFile; fileRef = B2587F731579E8B4009D7B44 /* BLYChannel.h */; };
 		B2587F761579E8B4009D7B44 /* BLYChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2587F741579E8B4009D7B44 /* BLYChannel.m */; };
 		B2587F781579EC64009D7B44 /* libSocketRocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B2587F601579E798009D7B44 /* libSocketRocket.a */; };
-		B294D25215DB6BA900F8D8D7 /* Bully.h in Headers */ = {isa = PBXBuildFile; fileRef = B2587F6E1579E842009D7B44 /* Bully.h */; };
-		B294D25315DB6BA900F8D8D7 /* BLYClient.h in Headers */ = {isa = PBXBuildFile; fileRef = B2587F6F1579E8AC009D7B44 /* BLYClient.h */; };
+		B294D25215DB6BA900F8D8D7 /* Bully.h in Headers */ = {isa = PBXBuildFile; fileRef = B2587F6E1579E842009D7B44 /* Bully.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B294D25315DB6BA900F8D8D7 /* BLYClient.h in Headers */ = {isa = PBXBuildFile; fileRef = B2587F6F1579E8AC009D7B44 /* BLYClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B294D25415DB6BA900F8D8D7 /* BLYClient.m in Sources */ = {isa = PBXBuildFile; fileRef = B2587F701579E8AC009D7B44 /* BLYClient.m */; };
-		B294D25515DB6BA900F8D8D7 /* BLYChannel.h in Headers */ = {isa = PBXBuildFile; fileRef = B2587F731579E8B4009D7B44 /* BLYChannel.h */; };
+		B294D25515DB6BA900F8D8D7 /* BLYChannel.h in Headers */ = {isa = PBXBuildFile; fileRef = B2587F731579E8B4009D7B44 /* BLYChannel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B294D25615DB6BA900F8D8D7 /* BLYChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2587F741579E8B4009D7B44 /* BLYChannel.m */; };
-		B294D25715DB6BA900F8D8D7 /* BLYClientPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = B28D33DB157A921200769AD0 /* BLYClientPrivate.h */; };
-		B294D25815DB6BA900F8D8D7 /* BLYChannelPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = B2587F79157A852C009D7B44 /* BLYChannelPrivate.h */; };
+		B294D25715DB6BA900F8D8D7 /* BLYClientPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = B28D33DB157A921200769AD0 /* BLYClientPrivate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B294D25815DB6BA900F8D8D7 /* BLYChannelPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = B2587F79157A852C009D7B44 /* BLYChannelPrivate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B2FB4894158AFA230067FB00 /* Bully.h in Headers */ = {isa = PBXBuildFile; fileRef = B2587F6E1579E842009D7B44 /* Bully.h */; };
 		B2FB4895158AFA230067FB00 /* BLYClientPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = B28D33DB157A921200769AD0 /* BLYClientPrivate.h */; };
 		B2FB4896158AFA230067FB00 /* BLYChannelPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = B2587F79157A852C009D7B44 /* BLYChannelPrivate.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		21396B95177299330040FCA2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B2587F0D1579E798009D7B44 /* SocketRocket.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = B2EB6A7215DB5C800035AD92;
-			remoteInfo = SocketRocketOSXLibrary;
-		};
-		21396B9B177299330040FCA2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B2587F0D1579E798009D7B44 /* SocketRocket.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = B2EB6A7315DB5C800035AD92;
-			remoteInfo = SocketRocketOSXLibrary;
-		};
 		21924D7B16B7A68400C7AC44 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B2587F0D1579E798009D7B44 /* SocketRocket.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = F6B2082C1450F597009315AF;
 			remoteInfo = SocketRocket;
+		};
+		93ED25AD18F362A500658DA3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B2587F0D1579E798009D7B44 /* SocketRocket.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F668C87F153E91210044DBAC;
+			remoteInfo = SocketRocketOSX;
 		};
 		B2587F5F1579E798009D7B44 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -119,7 +111,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21396B9D177299360040FCA2 /* libSocketRocketOSXLibrary.a in Frameworks */,
 				B2215B7D15DC19FF00DD59C1 /* Cocoa.framework in Frameworks */,
 				B2215B7B15DC19FB00DD59C1 /* Security.framework in Frameworks */,
 			);
@@ -192,7 +183,6 @@
 				B2587F621579E798009D7B44 /* SocketRocket.framework */,
 				B2587F641579E798009D7B44 /* SRWebSocketTests.octest */,
 				B2587F661579E798009D7B44 /* TestChat.app */,
-				21396B9C177299330040FCA2 /* libSocketRocketOSXLibrary.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -239,9 +229,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B294D25215DB6BA900F8D8D7 /* Bully.h in Headers */,
 				B294D25315DB6BA900F8D8D7 /* BLYClient.h in Headers */,
 				B294D25515DB6BA900F8D8D7 /* BLYChannel.h in Headers */,
+				B294D25215DB6BA900F8D8D7 /* Bully.h in Headers */,
 				B294D25715DB6BA900F8D8D7 /* BLYClientPrivate.h in Headers */,
 				B294D25815DB6BA900F8D8D7 /* BLYChannelPrivate.h in Headers */,
 			);
@@ -279,7 +269,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				21396B96177299330040FCA2 /* PBXTargetDependency */,
+				93ED25AE18F362A500658DA3 /* PBXTargetDependency */,
 			);
 			name = BullyMac;
 			productName = BullyMacLibrary;
@@ -292,7 +282,7 @@
 		B2587E421579E740009D7B44 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Sam Soffes";
 			};
 			buildConfigurationList = B2587E451579E740009D7B44 /* Build configuration list for PBXProject "Bully" */;
@@ -320,13 +310,6 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		21396B9C177299330040FCA2 /* libSocketRocketOSXLibrary.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libSocketRocketOSXLibrary.a;
-			remoteRef = 21396B9B177299330040FCA2 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		B2587F601579E798009D7B44 /* libSocketRocket.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -381,15 +364,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		21396B96177299330040FCA2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SocketRocketOSXLibrary;
-			targetProxy = 21396B95177299330040FCA2 /* PBXContainerItemProxy */;
-		};
 		21924D7C16B7A68400C7AC44 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SocketRocket;
 			targetProxy = 21924D7B16B7A68400C7AC44 /* PBXContainerItemProxy */;
+		};
+		93ED25AE18F362A500658DA3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SocketRocketOSX;
+			targetProxy = 93ED25AD18F362A500658DA3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -417,6 +400,7 @@
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
@@ -445,6 +429,7 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
@@ -499,6 +484,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = include/Bully;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 			};
@@ -518,6 +504,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = include/Bully;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 			};
