@@ -112,7 +112,7 @@ NSString *const BLYClientErrorDomain = @"BLYClientErrorDomain";
 		// Start reachability
 		_reachability = [Reachability reachabilityWithHostname:self.hostName];
 		[_reachability startNotifier];
-		[notificationCenter addObserver:self selector:@selector(_reachabilityChanged:) name:kReachabilityChangedNotification object:nil];
+		[notificationCenter addObserver:self selector:@selector(_reachabilityChanged:) name:kReachabilityChangedNotification object:_reachability];
 
 		// Connect!
 		[self connect];
