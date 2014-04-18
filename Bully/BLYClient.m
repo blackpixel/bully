@@ -112,7 +112,7 @@ NSString *const BLYClientErrorDomain = @"BLYClientErrorDomain";
 		// Start reachability
 		_reachability = [Reachability reachabilityWithHostname:self.hostName];
 		[_reachability startNotifier];
-		[notificationCenter addObserver:self selector:@selector(_reachabilityChanged:) name:kReachabilityChangedNotification object:_reachability];
+		//[notificationCenter addObserver:self selector:@selector(_reachabilityChanged:) name:kReachabilityChangedNotification object:_reachability];
 
 		// Connect!
 		[self connect];
@@ -303,22 +303,22 @@ NSString *const BLYClientErrorDomain = @"BLYClientErrorDomain";
 #endif
 
 
-- (void)_reachabilityChanged:(NSNotification *)notification {
-#if TARGET_OS_IPHONE
-	// If the app is in the background, ignore the notificaiton
-	if (_appIsBackgrounded) {
-		return;
-	}
-#endif
-
-	if ([_reachability isReachable]) {
-		// If Pusher became reachable, reconnect
-		[self connect];
-	} else {
-		// Disconnect if we lost the connection to Pusher
-		[self disconnect];
-	}
-}
+//- (void)_reachabilityChanged:(NSNotification *)notification {
+//#if TARGET_OS_IPHONE
+//	// If the app is in the background, ignore the notificaiton
+//	if (_appIsBackgrounded) {
+//		return;
+//	}
+//#endif
+//
+//	if ([_reachability isReachable]) {
+//		// If Pusher became reachable, reconnect
+//		[self connect];
+//	} else {
+//		// Disconnect if we lost the connection to Pusher
+//		[self disconnect];
+//	}
+//}
 
 
 #pragma mark - SRWebSocketDelegate
