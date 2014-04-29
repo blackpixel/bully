@@ -10,13 +10,13 @@
 		21396B9E177299470040FCA2 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = B256430C160285C500586711 /* Reachability.m */; };
 		B2215B7B15DC19FB00DD59C1 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2215B7A15DC19FB00DD59C1 /* Security.framework */; };
 		B2215B7D15DC19FF00DD59C1 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2215B7C15DC19FF00DD59C1 /* Cocoa.framework */; };
-		B2564321160285C500586711 /* Reachability.h in Headers */ = {isa = PBXBuildFile; fileRef = B256430B160285C500586711 /* Reachability.h */; };
+		B2564321160285C500586711 /* Reachability.h in Headers */ = {isa = PBXBuildFile; fileRef = B256430B160285C500586711 /* Reachability.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B2564322160285C500586711 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = B256430C160285C500586711 /* Reachability.m */; };
 		B256432A160285D900586711 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2564329160285D900586711 /* SystemConfiguration.framework */; };
 		B256432C160285DE00586711 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B256432B160285DE00586711 /* Foundation.framework */; };
-		B2587F711579E8AC009D7B44 /* BLYClient.h in Headers */ = {isa = PBXBuildFile; fileRef = B2587F6F1579E8AC009D7B44 /* BLYClient.h */; };
+		B2587F711579E8AC009D7B44 /* BLYClient.h in Headers */ = {isa = PBXBuildFile; fileRef = B2587F6F1579E8AC009D7B44 /* BLYClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B2587F721579E8AC009D7B44 /* BLYClient.m in Sources */ = {isa = PBXBuildFile; fileRef = B2587F701579E8AC009D7B44 /* BLYClient.m */; };
-		B2587F751579E8B4009D7B44 /* BLYChannel.h in Headers */ = {isa = PBXBuildFile; fileRef = B2587F731579E8B4009D7B44 /* BLYChannel.h */; };
+		B2587F751579E8B4009D7B44 /* BLYChannel.h in Headers */ = {isa = PBXBuildFile; fileRef = B2587F731579E8B4009D7B44 /* BLYChannel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B2587F761579E8B4009D7B44 /* BLYChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2587F741579E8B4009D7B44 /* BLYChannel.m */; };
 		B2587F781579EC64009D7B44 /* libSocketRocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B2587F601579E798009D7B44 /* libSocketRocket.a */; };
 		B294D25215DB6BA900F8D8D7 /* Bully.h in Headers */ = {isa = PBXBuildFile; fileRef = B2587F6E1579E842009D7B44 /* Bully.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -26,9 +26,9 @@
 		B294D25615DB6BA900F8D8D7 /* BLYChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2587F741579E8B4009D7B44 /* BLYChannel.m */; };
 		B294D25715DB6BA900F8D8D7 /* BLYClientPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = B28D33DB157A921200769AD0 /* BLYClientPrivate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B294D25815DB6BA900F8D8D7 /* BLYChannelPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = B2587F79157A852C009D7B44 /* BLYChannelPrivate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B2FB4894158AFA230067FB00 /* Bully.h in Headers */ = {isa = PBXBuildFile; fileRef = B2587F6E1579E842009D7B44 /* Bully.h */; };
-		B2FB4895158AFA230067FB00 /* BLYClientPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = B28D33DB157A921200769AD0 /* BLYClientPrivate.h */; };
-		B2FB4896158AFA230067FB00 /* BLYChannelPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = B2587F79157A852C009D7B44 /* BLYChannelPrivate.h */; };
+		B2FB4894158AFA230067FB00 /* Bully.h in Headers */ = {isa = PBXBuildFile; fileRef = B2587F6E1579E842009D7B44 /* Bully.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B2FB4895158AFA230067FB00 /* BLYClientPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = B28D33DB157A921200769AD0 /* BLYClientPrivate.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		B2FB4896158AFA230067FB00 /* BLYChannelPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = B2587F79157A852C009D7B44 /* BLYChannelPrivate.h */; settings = {ATTRIBUTES = (Private, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -219,9 +219,9 @@
 				B2587F711579E8AC009D7B44 /* BLYClient.h in Headers */,
 				B2587F751579E8B4009D7B44 /* BLYChannel.h in Headers */,
 				B2FB4894158AFA230067FB00 /* Bully.h in Headers */,
+				B2564321160285C500586711 /* Reachability.h in Headers */,
 				B2FB4895158AFA230067FB00 /* BLYClientPrivate.h in Headers */,
 				B2FB4896158AFA230067FB00 /* BLYChannelPrivate.h in Headers */,
-				B2564321160285C500586711 /* Reachability.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,9 +244,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B2587E581579E740009D7B44 /* Build configuration list for PBXNativeTarget "Bully" */;
 			buildPhases = (
+				B2587E491579E740009D7B44 /* Headers */,
 				B2587E471579E740009D7B44 /* Sources */,
 				B2587E481579E740009D7B44 /* Frameworks */,
-				B2587E491579E740009D7B44 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -451,7 +451,9 @@
 					"-ObjC",
 					"-all_load",
 				);
+				PRIVATE_HEADERS_FOLDER_PATH = include/Bully;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = include/Bully;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -465,7 +467,9 @@
 					"-ObjC",
 					"-all_load",
 				);
+				PRIVATE_HEADERS_FOLDER_PATH = include/Bully;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = include/Bully;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
