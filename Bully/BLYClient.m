@@ -303,7 +303,7 @@ NSString *const BLYClientErrorDomain = @"BLYClientErrorDomain";
 #endif
 
 
-//- (void)_reachabilityChanged:(NSNotification *)notification {
+- (void)_reachabilityChanged:(NSNotification *)notification {
 //#if TARGET_OS_IPHONE
 //	// If the app is in the background, ignore the notificaiton
 //	if (_appIsBackgrounded) {
@@ -318,7 +318,7 @@ NSString *const BLYClientErrorDomain = @"BLYClientErrorDomain";
 //		// Disconnect if we lost the connection to Pusher
 //		[self disconnect];
 //	}
-//}
+}
 
 
 #pragma mark - SRWebSocketDelegate
