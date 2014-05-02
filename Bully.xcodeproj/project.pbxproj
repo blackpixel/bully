@@ -447,10 +447,6 @@
 			buildSettings = {
 				DSTROOT = /tmp/Bully.dst;
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Vendor/SocketRocket/\"";
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-all_load",
-				);
 				PRIVATE_HEADERS_FOLDER_PATH = include/Bully;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PUBLIC_HEADERS_FOLDER_PATH = include/Bully;
@@ -463,10 +459,6 @@
 			buildSettings = {
 				DSTROOT = /tmp/Bully.dst;
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Vendor/SocketRocket/\"";
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-all_load",
-				);
 				PRIVATE_HEADERS_FOLDER_PATH = include/Bully;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PUBLIC_HEADERS_FOLDER_PATH = include/Bully;
