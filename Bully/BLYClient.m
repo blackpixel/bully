@@ -95,7 +95,6 @@ NSString *const BLYClientErrorDomain = @"BLYClientErrorDomain";
             _hostName = @"ws.pusherapp.com";
         }
 
-		NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
 
 #if TARGET_OS_IPHONE
 		// Assume we don't start in the background
@@ -105,6 +104,7 @@ NSString *const BLYClientErrorDomain = @"BLYClientErrorDomain";
 		_automaticallyDisconnectInBackground = YES;
 
 		// Listen for background changes
+		NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
 		[notificationCenter addObserver:self selector:@selector(_appDidEnterBackground:) name:UIApplicationDidEnterBackgroundNotification object:nil];
 		[notificationCenter addObserver:self selector:@selector(_appDidBecomeActive:) name:UIApplicationDidBecomeActiveNotification object:nil];
 #endif
@@ -112,6 +112,7 @@ NSString *const BLYClientErrorDomain = @"BLYClientErrorDomain";
 		// Start reachability
 		_reachability = [Reachability reachabilityWithHostname:self.hostName];
 		[_reachability startNotifier];
+		//NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
 		//[notificationCenter addObserver:self selector:@selector(_reachabilityChanged:) name:kReachabilityChangedNotification object:_reachability];
 
 		// Connect!
