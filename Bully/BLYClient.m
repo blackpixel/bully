@@ -18,6 +18,17 @@
 
 NSString *const BLYClientErrorDomain = @"BLYClientErrorDomain";
 
+
+NSString * const BLYConnectionEstablishedEvent = @"pusher:connection_established";
+NSString * const BLYConnectionPingEvent = @"pusher:ping";
+NSString * const BLYConnectionPongEvent = @"pusher:pong";
+NSString * const BLYConnectionErrorEvent = @"pusher:error";
+
+@interface BLYClient ()
+@property (nonatomic, retain) NSTimer *pingTimer;
+@property (nonatomic, retain) NSTimer *pongTimer;
+@end
+
 @implementation BLYClient {
 	Reachability *_reachability;
 
@@ -65,6 +76,8 @@ NSString *const BLYClientErrorDomain = @"BLYClientErrorDomain";
 	[_reachability stopNotifier];
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
 
+    [self cancelTimers];
+    
 	_automaticallyReconnect = NO;
 
 #if TARGET_OS_IPHONE
@@ -114,6 +127,9 @@ NSString *const BLYClientErrorDomain = @"BLYClientErrorDomain";
 		[_reachability startNotifier];
 		//NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
 		//[notificationCenter addObserver:self selector:@selector(_reachabilityChanged:) name:kReachabilityChangedNotification object:_reachability];
+
+        self.connectionActivityTimeout = 120.0;
+        self.connectionPongTimeout = 30.0;
 
 		// Connect!
 		[self connect];
@@ -188,6 +204,48 @@ NSString *const BLYClientErrorDomain = @"BLYClientErrorDomain";
 	return self.webSocket != nil;
 }
 
+
+#pragma mark - Ping/Pong/Activity -
+
+- (void)cancelTimers
+{
+    [self.pingTimer invalidate];
+    [self.pongTimer invalidate];
+    self.pingTimer = nil;
+    self.pongTimer = nil;
+}
+
+- (void)restartTimers
+{
+    [self cancelTimers];
+    
+    self.pingTimer = [NSTimer scheduledTimerWithTimeInterval:self.connectionActivityTimeout target:self selector:@selector(handleActivityTimeout) userInfo:nil repeats:NO];
+}
+
+- (void)handleActivityTimeout
+{
+#ifdef DEBUG
+    NSLog(@"[pusher] Pusher connection activity timeout reached, sending ping to server");
+#endif
+    
+    [self sendPing];
+    
+    self.pongTimer = [NSTimer scheduledTimerWithTimeInterval:self.connectionPongTimeout target:self selector:@selector(handlePongTimeout) userInfo:nil repeats:NO];
+}
+
+- (void)handlePongTimeout
+{
+#ifdef DEBUG
+    NSLog(@"[pusher] Server did not respond to ping within timeout, disconnecting");
+#endif
+    
+    [self disconnect];
+}
+
+- (void)sendPing
+{
+    [self _sendEvent:BLYConnectionPingEvent dictionary:nil];
+}
 
 #pragma mark - Private
 
@@ -328,6 +386,8 @@ NSString *const BLYClientErrorDomain = @"BLYClientErrorDomain";
 	NSData *messageData = [(NSString *)messageString dataUsingEncoding:NSUTF8StringEncoding];
 	NSDictionary *message = [NSJSONSerialization JSONObjectWithData:messageData options:NSJSONReadingAllowFragments error:nil];
 
+    [self restartTimers];
+    
 	// Get event out of Pusher message
 	NSString *eventName = [message objectForKey:@"event"];
 	id eventMessage = [message objectForKey:@"data"];
@@ -339,7 +399,7 @@ NSString *const BLYClientErrorDomain = @"BLYClientErrorDomain";
 	}
 
 	// Check for pusher:connect_established
-	if ([eventName isEqualToString:@"pusher:connection_established"]) {
+	if ([eventName isEqualToString:BLYConnectionEstablishedEvent]) {
 		self.socketID = [eventMessage objectForKey:@"socket_id"];
 		if ([self.delegate respondsToSelector:@selector(bullyClientDidConnect:)]) {
 			[self.delegate bullyClientDidConnect:self];
@@ -377,7 +437,7 @@ NSString *const BLYClientErrorDomain = @"BLYClientErrorDomain";
 	}
 
     // Check for pusher:error
-    if ([eventName isEqualToString:@"pusher:error"]) {
+    if ([eventName isEqualToString:BLYConnectionErrorEvent]) {
         // find error code and error message
         NSInteger errorCode = 0;
         NSString *eventCode = [eventMessage objectForKey:@"code"];
@@ -402,13 +462,16 @@ NSString *const BLYClientErrorDomain = @"BLYClientErrorDomain";
 
 
 - (void)webSocket:(SRWebSocket *)webSocket didFailWithError:(NSError *)error {
-	[self _handleDisconnectAllowAutomaticReconnect:NO error:error];
+    [self cancelTimers];
+    [self _handleDisconnectAllowAutomaticReconnect:NO error:error];
 	[self _reconnectAfterDelay];
 }
 
 
 - (void)webSocket:(SRWebSocket *)webSocket didCloseWithCode:(NSInteger)code reason:(NSString *)reason wasClean:(BOOL)wasClean {
-	// Check for error codes based on the Pusher Websocket protocol
+    [self cancelTimers];
+
+    // Check for error codes based on the Pusher Websocket protocol
 	// See http://pusher.com/docs/pusher_protocol
 	// Protocol >= 6 also exposes a human-readable reason why the disconnect happened
 	NSError *error = [NSError errorWithDomain:BLYClientErrorDomain code:code userInfo:@{@"reason": reason}];

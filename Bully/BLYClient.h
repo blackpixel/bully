@@ -22,6 +22,9 @@ extern NSString *const BLYClientErrorDomain;
 
 @property (nonatomic, strong, readonly) NSString *hostName;
 
+@property (nonatomic, assign) NSTimeInterval connectionActivityTimeout;
+@property (nonatomic, assign) NSTimeInterval connectionPongTimeout;
+
 #if TARGET_OS_IPHONE
 @property (nonatomic, assign) BOOL automaticallyDisconnectInBackground; // Default is YES
 #endif
