@@ -12,7 +12,7 @@
 #import "BLYChannelPrivate.h"
 #import "Reachability.h"
 
-#if TARGET_OS_IPHONE
+#if defined(TARGET_IOS) || defined(TARGET_OS_TV)
 #import <UIKit/UIApplication.h> // For background notificaitons
 #endif
 
@@ -109,7 +109,7 @@ NSString * const BLYConnectionErrorEvent = @"pusher:error";
         }
 
 
-#if TARGET_OS_IPHONE
+#if defined(TARGET_IOS) || defined(TARGET_OS_TV)
 		// Assume we don't start in the background
 		_appIsBackgrounded = NO;
 
