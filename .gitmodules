@@ -4,3 +4,4 @@
 [submodule "Vendor/SocketRocket"]
 	path = Vendor/SocketRocket
 url=git@github.com:blackpixel/SocketRocket.git
+branch = tvos
