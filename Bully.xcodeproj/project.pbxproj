@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		21396B9E177299470040FCA2 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = B256430C160285C500586711 /* Reachability.m */; };
-		378354221BBC5D5B003C4711 /* Bully_tvOS.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 378354211BBC5D5B003C4711 /* Bully_tvOS.h */; };
 		3783544B1BBC5F8A003C4711 /* BLYClient.m in Sources */ = {isa = PBXBuildFile; fileRef = B2587F701579E8AC009D7B44 /* BLYClient.m */; };
 		3783544C1BBC5F8A003C4711 /* BLYChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2587F741579E8B4009D7B44 /* BLYChannel.m */; };
 		3783544D1BBC5FEE003C4711 /* libSocketRocket-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 378354441BBC5E17003C4711 /* libSocketRocket-tvOS.a */; };
@@ -104,7 +103,6 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				378354221BBC5D5B003C4711 /* Bully_tvOS.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -672,6 +670,7 @@
 				378354261BBC5D5B003C4711 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B2587E451579E740009D7B44 /* Build configuration list for PBXProject "Bully" */ = {
 			isa = XCConfigurationList;
